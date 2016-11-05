@@ -45,12 +45,7 @@ func DownloadAndExtractFromZip(zipUrl *url.URL, reportDownloadProgress bool) ([]
 		return nil, ErrRetrievingZip{zipUrl, HttpError(resp.StatusCode)}
 	}
 
-	/*payload, err := getBytes(resp.Body, zipUrl, resp.ContentLength, reportDownloadProgress)
-	if err != nil {
-		return nil, ErrRetrievingZip{zipUrl, err}
-	}*/
-
-	payload, err := ioutil.ReadFile("f:/1478077143146.zip")
+	payload, err := getBytes(resp.Body, zipUrl, resp.ContentLength, reportDownloadProgress)
 	if err != nil {
 		return nil, ErrRetrievingZip{zipUrl, err}
 	}
