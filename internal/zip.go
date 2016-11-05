@@ -62,7 +62,7 @@ func DownloadAndExtractFromZip(zipUrl *url.URL, reportDownloadProgress bool) ([]
 			return nil, ErrProcessingZip{zipUrl, f, err}
 		}
 	}
-	return pl[:356], nil
+	return pl, nil
 }
 
 func extractFileInZip(f *zip.File) ([]byte, error) {
