@@ -53,7 +53,7 @@ func main() {
 	defer redisClient.Close()
 
 	// 3 download workers
-	for i := 0; i < 1; i++ {
+	for i := 0; i < 3; i++ {
 		downloadWorkers.Add(1)
 		go func() {
 			defer downloadWorkers.Done()
